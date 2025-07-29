@@ -1,0 +1,42 @@
+# Ignore DDEV logs and junk files
+.ddev/.dbimage*
+.ddev/.webimage*
+.ddev/.downloads/
+.ddev/db_snapshots/
+.ddev/import-db/
+.ddev/sequelpro.spf
+
+# Composer dependencies
+/vendor/
+# Drupal core and contrib code (managed via Composer)
+web/core/
+web/modules/contrib/
+web/themes/contrib/
+web/profiles/
+
+# Drupal private files
+web/sites/*/private/
+
+# Drupal site-specific files
+web/sites/*/files/
+web/sites/*/settings.local.php
+web/sites/*/services.local.yml
+
+# Backup and log files
+*.sql
+*.sqlite
+*.log
+*.gz
+*.zip
+*.tar.gz
+*.bak
+
+# IDE/Editor files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db

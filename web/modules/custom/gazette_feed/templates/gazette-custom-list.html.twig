@@ -1,0 +1,41 @@
+<div class="gazette-items">
+  {% for item in items %}
+    {{ item }}
+  {% endfor %}
+</div>
+
+
+{% if pagination.total_pages > 1 %}
+  <nav class="pagination">
+    <ul class="pagination-list">
+
+      {# First Page #}
+      {% if pagination.current > 3 %}
+        <li><a href="{{ pagination.base_url }}?page=1">1</a></li>
+        <li class="dots">…</li>
+      {% endif %}
+
+      {# Middle Pages (windowed) #}
+      {% set start = max(pagination.current - 2, 2) %}
+      {% set end = min(pagination.current + 2, pagination.total_pages - 1) %}
+
+
+      {% for i in start..end %}
+        <li class="{{ i == pagination.current ? 'active' : '' }}">
+          <a href="{{ pagination.base_url }}?page={{ i }}">{{ i }}</a>
+        </li>
+      {% endfor %}
+
+      {# Last Page #}
+      {% if pagination.current < pagination.total_pages - 2 %}
+        <li class="dots">…</li>
+        <li><a href="{{ pagination.base_url }}?page={{ pagination.total_pages }}">{{ pagination.total_pages }}</a></li>
+      {% endif %}
+
+    </ul>
+  </nav>
+{% endif %}
+
+
+
+

@@ -1,0 +1,7 @@
+name: 'Gazette Feed'
+type: module
+description: 'Displays notices from The Gazette API.'
+core_version_requirement: ^10
+package: Custom
+dependencies:
+  - drupal:system

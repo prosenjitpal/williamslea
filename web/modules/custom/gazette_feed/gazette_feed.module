@@ -1,0 +1,19 @@
+<?php
+use Drupal\Core\Extension\ThemeHandlerInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function gazette_feed_theme($existing, $type, $theme, $path) {
+  return [
+    'gazette_custom_list' => [
+      'variables' => [
+        'items' => [],
+        'pagination' => [],
+      ],
+      'template' => 'gazette-custom-list',
+      'path' => $path . '/templates',
+    ],
+  ];
+}
+

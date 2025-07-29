@@ -1,0 +1,7 @@
+gazette_feed.list:
+  path: '/gazette-feed'
+  defaults:
+    _controller: '\Drupal\gazette_feed\Controller\GazetteFeedController::list'
+    _title: 'Gazette Notices'
+  requirements:
+    _permission: 'access content'
